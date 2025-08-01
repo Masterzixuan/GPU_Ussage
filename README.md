@@ -1,6 +1,6 @@
 # GPU集群使用
 
-目前主节点为master，具有固定IP，需在校园网环境下连接
+目前主节点为master，具有固定IP，需在校园网环境下连接  
 IP：**211.81.48.139**
 
 连接gpu节点需要以master为跳板机，先ssh到master后在ssh gpu
