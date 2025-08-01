@@ -3,7 +3,34 @@
 所有涉及到GPU、多核的作业都必须通过Slurm提交作业，否则系统容易崩溃～！
 
 可以自己查阅Slurm使用教程，此处仅有简单的使用教程及示例
+需要知道的一些内容：
+**account**：相当于用户组，默认添加的用户组为tju
+**QOS**：Quality of Service，服务质量）是一个用于管理资源分配和作业优先级的机制，tju下默认为normal和long
 
+Accoung管理：
+| Account | QOS |
+|---------|---------|
+| tju   | normal,long   |
+
+QOS管理：  
+| QOS | MaxTRESPU | MaxTRES | MaxWall | MaxJobsPU | MaxSubmitJobsPU |
+|-----|-----------|---------|---------|-----------|-----------------|
+|normal|4|4|3day|4|4|
+|long|8|8|7day|1|1|
+
+MaxTRESPU：每个用户最多同时占用GPU数  
+MaxTRES：每个作业最多占用GPU数  
+MaxWall：每个作业最长运行时长  
+MaxJobsPU：每个用户最多运行作业数  
+MaxSubmitJobsPU：每个用户最多排队作业数  
+
+
+
+- 查看集群状态
+  ```bash
+  sinfo
+  ```
+节点状态：drain(节点故障)，alloc(节点在用)，idle(节点可用)，down(节点下线)，mix(节点部分占用，但仍有剩余资源）
 - 创建一个sh文件用于提交作业
 
   ```bash
