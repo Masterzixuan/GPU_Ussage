@@ -11,5 +11,15 @@ ssh gpu
 **注意：所有GPU作业都需通过Slurm提交，通过节点连接的python和jupyter都只允许进行简单的单核cpu作业（如绘图、数据预处理……）！！！不允许通过jupyterlab及python运行多核、大内存占用、GPU等作业！！！**
 
 # 存储状态
+/dev/nvme2n1p2             1.8T  7.2G  1.7T   1% /home  
+/dev/nvme0n1p1             7.0T   50G  7.0T   1% /Data  
+/dev/nvme1n1p1             7.0T   50G  7.0T   1% /home/Data  
+目前可用的有三块硬盘，分别挂载在不同的路径下
 ## 1 M.2 NVME SSD 2TB
 这个硬盘目前挂载在`/home`路径下，仅用于存储用户的文件夹以及重要代码，模型checkpoint
+
+## 2 U.2 NVME SSD 7TB
+这个硬盘挂载在/Data，用户可在该路径下创建文件夹存储训练数据
+
+## 3 U.2 NVME SSD 7TB
+这个硬盘挂载在/home/Data，用户可在该路径下创建文件夹存储训练数据
